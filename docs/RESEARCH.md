@@ -2,9 +2,9 @@
 
 ## 2026-11-24 — Initial static audit
 
-Analyzed the owner-provided GOverlay v1.69 portable distribution using a local PE/CLI metadata and CIL reader. No proprietary executable was run and no USB packets were sent. Identified the LCDsysinfo2 class, vendor control transfers, graphics primitives and persistent-write hazards. Verified archive and binary SHA-256 values against the dated audit.
+Analyzed the owner-provided GOverlay v1.69 portable distribution using a local PE/CLI metadata and CIL reader. No proprietary executable was run and no USB packets were sent. Identified the LCDsysinfo2 class, vendor control transfers, graphics primitives and persistent-write hazards. Verified archive and binary SHA-256 values against the dated audit. Further research and publication must follow the [interoperability policy](INTEROPERABILITY.md).
 
-Outstanding: complete byte layouts for text, icons, progress bars, lines and shapes; firmware version gates and color conversions; static native updater/resource analysis; passive capture and controlled hardware validation.
+Outstanding: complete byte layouts for text, icons, progress bars, lines and shapes; firmware version gates and color conversions; passive capture and controlled hardware validation.
 
 Public background references (not evidence that older drivers support the 3.5-inch model):
 - https://www.goverlay.com/content/lcdsysinfo2
