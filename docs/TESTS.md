@@ -2,12 +2,12 @@
 
 No hardware tests have been performed.
 
-1. Record device revision, USB descriptors, driver binding and baseline display state.
-2. Close the original application; avoid concurrent USB access.
-3. Independently review the exact firmware and serial query tuples, then run only those queries. Record raw replies, status and lengths; redact serial before publication.
-4. After review, separately authorize pixel read, normal brightness and simple graphic primitives.
-5. Each visual test must hold its result indefinitely until explicit operator confirmation. Show expected appearance and exact test identifier before sending; record observed results, packets and anomalies. Never advance on a timer.
-6. Stop on any unexpected result, short transfer or disconnect. No retries of unknown operations.
-7. Do not test EEPROM, flash, bootloader, firmware update, blacklist or framebuffer capture in the initial phase.
+1. Identify the device and record its revision, driver binding and baseline display state.
+2. Ensure exclusive access to authorized hardware.
+3. Review each candidate operation for necessity, safety and lawful use before testing.
+4. Begin with verified nonpersistent identification operations; separately review ordinary brightness and drawing operations before enabling them.
+5. Each visual test must hold its result until explicit operator confirmation. Record the expected result, observed result and transfer status.
+6. Stop on unexpected behavior, short transfers or disconnects.
+7. Exclude persistent writes, firmware updates, device-restriction operations and arbitrary command scans.
 
-Future tests must distinguish static inference, passive capture and physically verified behavior; record firmware revision for every result.
+Publish only reviewed interoperability test results. Redact personal and unique device identifiers.
