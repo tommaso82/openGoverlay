@@ -2,7 +2,7 @@
 
 Status: proposed mandatory constraints for future implementations; no hardware validation yet.
 
-The original v1.69 host application contains an online blacklist path: Form1::WebBrowser_Check_DocumentCompleted (MethodDef 2205, IL 0x0026–0x004B) calls LCDsysinfo2::BlockUnit (2720) on a matching response. BlockUnit calls WriteEprom (2722) with address 15 and value 137. The vendor updater uses HTTP. Firmware enforcement, reversibility and the original EEPROM value are unknown. Do not deliberately set or clear this marker. The original GetLockedStatus (2721) requests zero bytes despite allocating a 12-byte buffer and then examines byte 7; it is not a reliable diagnostic.
+Persistent configuration and device-restriction operations are outside the project scope. Their effects have not been verified on hardware. Do not test, modify or bypass them.
 
 ## Mandatory constraints
 
@@ -13,7 +13,7 @@ The original v1.69 host application contains an online blacklist path: Form1::We
 - Do not assume an IN request is safe. Initially restrict device tests to documented firmware and serial queries.
 - Framebuffer capture is excluded because the original procedure issues flash-family commands before and after reading.
 - Check transfer status and actual length, serialize transfers and stop on anomalies.
-- No telemetry, network dependency or remote blacklist. Redact device serials in public logs.
+- No telemetry, network dependency or device-restriction management. Redact device serials in public logs.
 - No command fuzzing or persistent writes in initial hardware validation.
 
 See the dated audit for evidence and limitations.
